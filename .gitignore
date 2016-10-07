@@ -1,0 +1,12 @@
+syntax: glob
+*.txt
+*.fits
+*.h5
+.ipynb_checkpoints/
+*.pyc
+*.png
+*.eps
+*ps
+*swp
+*~
+(^|/)\.
