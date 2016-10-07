@@ -9,15 +9,16 @@ N_stars = 1000.
 n_trials = 100.
 
 
-k_recoverd = 25.
+k_recoverd = np.arange(0,40.5,1)
 
-true_p = np.arange(150, 401., 5.)
 
 probs = {}
 
-for ii, p in enumerate(true_p):
-    rv = hypergeom(N_stars, p, n_trials)
-    probs[p] = rv.pmf(k_recoverd)
+p = 200.
+rv = hypergeom(N_stars, p, n_trials)
+
+for ii, k in enumerate(k_recoverd):
+    probs[k] = rv.pmf(k)
 
 P = OrderedDict(sorted(probs.items(), key=lambda t: t[0]))
 
