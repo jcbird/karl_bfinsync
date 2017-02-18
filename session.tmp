@@ -1,0 +1,555 @@
+import numpy as np
+from os import path
+from astropy import table
+_basepath = path.join(path.expanduser('~'), 'projects', 'karl')
+apogee_file = path.join(path.expanduser('~'), 'obsdata', 'dr14_beta',
+                        'allVisit-l31c.1.fits')
+apogee_df = table.Table.read(apogee_file).to_pandas()
+apogee_df['APOGEE_ID']
+import pandas as pd
+apogee_df['APOGEE_ID']  = pd.Series([i.strip() for i in apogee_df['APOGEE_ID']], index=apogee_df.index)
+apogee_df['APOGEE_ID'].values
+apogee_df.set_index(['APOGEE_ID', 'JD'], inplace=True)
+apogee_df
+insync_df = table.Table.read(insync_file).to_pandas()
+insync_file = path.join(_basepath,
+                        'insync_apogee_all_star_masked_pleiades_data.csv')
+insync_df = table.Table.read(insync_file).to_pandas()
+tmass1 = insync_df['twomassid_epoch'][0]
+jd1 = insync_df['raw_jd'][0]
+jd1
+int(jd1)
+round(jd1)
+int(round(jd1))
+jjd1 = int(round(jd1))
+apogee_df.index
+apogee_df.loc[tmass1, jjd1]
+jjd1
+apogee_df.head()
+jd1
+jd2 = round(jd1)
+apogee_df.loc[tmass1, jd2]
+apogee_df.loc[tmass1]
+apogee_df.loc[tmass1].index.values
+jd1
+apogee_df.loc[tmass1].index.values
+apogee_df.loc[tmass1].index.values - jd1
+np.argmin(apogee_df.loc[tmass1].index.values - jd1)
+min(apogee_df.loc[tmass1].index.values - jd1)
+min(enumerate(apogee_df.loc[tmass1].index.values - jd1))
+apogee_cat = apogee_df
+obsdates = apogee_cat.loc[twomassid].index.values
+indx, delta_date = min(enumerate(np.abs(obsdates - JD)))
+obsdates = apogee_cat.loc[twomassid].index.values
+indx, delta_date = min(enumerate(np.abs(obsdates - JD)))
+obsdates = apogee_cat.loc[tmass1].index.values
+JD = jd1
+indx, delta_date = min(enumerate(np.abs(obsdates - JD)))
+indx
+delta_date
+apogee_JD = obsdates[indx]
+apogee_cat.loc[tmass1, apogee_JD]
+insync_df
+insync_df.columns
+insync_df['vrad_epoch']
+insync_df['vrad_epoch'].values
+apogee_df.columns
+insync_df.columns
+fig, ax = plt.subplots?
+fig, ax = plt.subplots()
+plt.style.available
+pwd
+import compare_insync_apogee_RV
+apogee_df
+apogee_df.columns
+apogee_df['VHELIO']
+apogee_df.loc[tmass1].index.values - jd1
+apogee_df.loc[tmass1].index.values
+jjd = apogee_df.loc[tmass1].index.values[0]
+apogee_df.loc[tmass1, jjd]
+row = apogee_df.loc[tmass1, jjd]
+row
+row.columns
+row['VHELIO']
+row['VHELIO'].value
+row['VHELIO'].values
+row['VHELIO'].values[0]
+insync_rv = insync_df['vrad_epoch'].values
+insync_twomassid = insync_df['twomassid_epoch'].values
+insync_jd = insync_df['raw_jd'].values
+pwd
+from tools import apvisit_interface
+apvisit_interface.find_apogee_match(insync_twomassid[0], insync_jd[0], apogee_df)
+row = apvisit_interface.find_apogee_match(insync_twomassid[0], insync_jd[0], apogee_df)
+row['VHELIO']
+_basepath = path.join(path.expanduser('~'), 'projects', 'karl')
+insync_file = path.join(_basepath,
+                        'insync_apogee_all_star_masked_pleiades_data.csv')
+insync_df = table.Table.read(insync_file).to_pandas()
+# Default is dr14 file
+dr14_allVisit = apvisit_interface.prep_allVisit()
+insync_rv = insync_df['vrad_epoch'].values
+insync_twomassid = insync_df['twomassid_epoch'].values
+insync_jd = insync_df['raw_jd'].values
+dr14_rv = np.empty_like(insync_rv)
+for ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        dr14_rv[ii] = cat_row['VHELIO'].values[0]
+for ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        print(cat_row)
+        #dr14_rv[ii] = cat_row['VHELIO'].values[0]
+reload(apvisit_interface)
+for ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        print(cat_row)
+        #dr14_rv[ii] = cat_row['VHELIO'].values[0]
+for ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        print(ii)
+        dr14_rv[ii] = cat_row['VHELIO'].values[0]
+reload(apvisit_interface)
+for ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        print(ii)
+        dr14_rv[ii] = cat_row['VHELIO'].values[0]
+reload(apvisit_interface)
+for ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        print(ii)
+        dr14_rv[ii] = cat_row['VHELIO'].values[0]
+min?
+reload(apvisit_interface)
+for ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        print(ii)
+        dr14_rv[ii] = cat_row['VHELIO'].values[0]
+reload(apvisit_interface)
+dr14_rv = np.empty_like(insync_rv)
+for ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        dr14_rv[ii] = cat_row['VHELIO'].values[0]
+def plot_comparison(is_rv, ap_rv):
+        fig, ax = plt.subplots()
+        with plt.style.use(['avrfig']):
+                ax.scatter(is_rv, ap_rv)
+            return fig, ax
+def plot_comparison(is_rv, ap_rv):
+        fig, ax = plt.subplots()
+        with plt.style.use(['avrfig']):
+                ax.scatter(is_rv, ap_rv)
+                return fig, ax
+fig, ax = plot_comparison(insync_rc, dr14_rv)
+fig, ax = plot_comparison(insync_rv, dr14_rv)
+def plot_comparison(is_rv, ap_rv):
+        fig, ax = plt.subplots()
+        with plt.style.use(['avrfig']):
+                ax.scatter(is_rv, ap_rv)
+        return fig, ax
+fig, ax = plot_comparison(insync_rv, dr14_rv)
+plt.draw()
+plt.show()
+plt.style.available
+def plot_comparison(is_rv, ap_rv):
+        fig, ax = plt.subplots()
+        with plt.style.use(['cleanpaper']):
+                ax.scatter(is_rv, ap_rv)
+        return fig, ax
+fig, ax = plot_comparison(insync_rv, dr14_rv)
+def plot_comparison(is_rv, ap_rv):
+        fig, ax = plt.subplots()
+        with plt.style.use(['ggplot']):
+                ax.scatter(is_rv, ap_rv)
+        return fig, ax
+fig, ax = plot_comparison(insync_rv, dr14_rv)
+plt.show()
+plt.draw()
+def plot_comparison(is_rv, ap_rv):
+        fig, ax = plt.subplots()
+        ax.scatter(is_rv, ap_rv)
+        return fig, ax
+fig, ax = plot_comparison(insync_rv, dr14_rv)
+apogee_df.columns
+dr14_synthvhelio = np.empty_like(insync_rv)
+dr14_vhelio = np.empty_like(insync_rv)
+dr14_obsvhelio = np.empty_like(insync_rv)
+for ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        dr14_vhelio[ii] = cat_row['VHELIO'].values[0]
+        dr14_synthvhelio[ii] = cat_row['SYNTHVHELIO'].values[0]
+        dr14_obsvhelio[ii] = cat_row['OBSVHELIO'].values[0]
+fig, ax = plot_comparison(insync_rv, dr14_synthvhelio)
+fig, ax = plot_comparison(insync_rv, dr14_obsvhelio)
+dr14_obsvhelio
+dr14_synthvhelio
+plt.ylim(-20,10)
+xx= np.linspace(-20,10)
+plt.plot(xx,xx)
+def plot_comparison(is_rv, ap_rv):
+        fig, ax = plt.subplots()
+        xx = np.linspace(-20,10,50)
+        ax.scatter(is_rv, ap_rv)
+        ax.plot(xx,xx, lw=1)
+        return fig, ax
+def plot_comparison(is_rv, ap_rv):
+        fig, ax = plt.subplots()
+        xx = np.linspace(-20,10,50)
+        ax.scatter(is_rv, ap_rv)
+        ax.plot(xx,xx, lw=1)
+        ax.set_ylim(-20,10)
+        return fig, ax
+plt.close('all')
+fig, ax = plot_comparison(insync_rv, dr14_obsvhelio)
+fig, ax = plot_comparison(insync_rv, dr14_synthvhelio)
+fig, ax = plot_comparison(insync_rv, dr14_vhelio)
+apogee_df.columns
+apogee_df['TARGFLAGS']
+apogee_df.columns
+apogee_df['STARFLAGS']
+apogee_df.columns
+apogee_df['STARFLAGS']
+apogee_df.columns
+for ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        dr14_vhelio[ii] = cat_row['VHELIO'].values[0]
+        dr14_synthvhelio[ii] = cat_row['SYNTHVHELIO'].values[0]
+        dr14_obsvhelio[ii] = cat_row['OBSVHELIO'].values[0]
+        dr14_flags[ii] = cat_row['STARFLAGS']
+dr14_flags = np.empty_like(insync_rv)
+for ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        dr14_vhelio[ii] = cat_row['VHELIO'].values[0]
+        dr14_synthvhelio[ii] = cat_row['SYNTHVHELIO'].values[0]
+        dr14_obsvhelio[ii] = cat_row['OBSVHELIO'].values[0]
+        dr14_flags[ii] = cat_row['STARFLAGS']
+dr14_flags = []
+for ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        dr14_vhelio[ii] = cat_row['VHELIO'].values[0]
+        dr14_synthvhelio[ii] = cat_row['SYNTHVHELIO'].values[0]
+        dr14_obsvhelio[ii] = cat_row['OBSVHELIO'].values[0]
+        dr14_flags.append(cat_row['STARFLAGS'])
+dr14_flags
+or ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        dr14_vhelio[ii] = cat_row['VHELIO'].values[0]
+        dr14_synthvhelio[ii] = cat_row['SYNTHVHELIO'].values[0]
+        dr14_obsvhelio[ii] = cat_row['OBSVHELIO'].values[0]
+        dr14_flags.append(cat_row['STARFLAGS'].values[0])
+dr14_flags = []
+for ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        dr14_vhelio[ii] = cat_row['VHELIO'].values[0]
+        dr14_synthvhelio[ii] = cat_row['SYNTHVHELIO'].values[0]
+        dr14_obsvhelio[ii] = cat_row['OBSVHELIO'].values[0]
+        dr14_flags.append(cat_row['STARFLAGS'].values[0])
+dr14_flags
+dr14_flags[:10]
+dr14_flags[:20]
+dr14_flags[:30]
+dr14_flags[:40]
+dr14_flags[:50]
+dr14_flags[:56]
+dr14_flags
+pd.DataFrame.empty()
+pd.DataFrame.empty
+pd.DataFrame()
+for ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        rows.append(cat_row)
+        dr14_vhelio[ii] = cat_row['VHELIO'].values[0]
+        dr14_synthvhelio[ii] = cat_row['SYNTHVHELIO'].values[0]
+        dr14_obsvhelio[ii] = cat_row['OBSVHELIO'].values[0]
+        dr14_flags.append(cat_row['STARFLAGS'].values[0])
+rows = []
+dr14_flags = []
+for ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        rows.append(cat_row)
+        dr14_vhelio[ii] = cat_row['VHELIO'].values[0]
+        dr14_synthvhelio[ii] = cat_row['SYNTHVHELIO'].values[0]
+        dr14_obsvhelio[ii] = cat_row['OBSVHELIO'].values[0]
+        dr14_flags.append(cat_row['STARFLAGS'].values[0])
+pd.DataFrame(rows)
+pd.DataFrame(rows).shape
+pd.concat(rows)
+aa = pd.concat(rows)
+aa.head()
+aa['VHELIO']
+aa.columns
+aa['VRELERR']
+aa.columns
+aa['VRELERR']
+aa['OBSVRELERR']
+figure()
+plt.scatter(aa['VRELERR'], aa['OBSVRELERR'])
+plt.xlim(-5,5)
+plt.xlim(-5,5)
+plt.ylim(-5,5)
+plt.scatter(aa['VRELERR'], aa['OBSVRELERR'])
+dr14_data = pd.concat(rows)
+figure()
+plt.scatter(insync_rv, dr14_data['VHELIO'], c=dr14_data['VRELERR'])
+plt.colorbar()
+clf()
+plt.scatter(insync_rv, dr14_data['VHELIO'], c=dr14_data['VRELERR'], vmin=0, vmax=5)
+plt.colorbar()
+plt.xlim(-20,10)
+plt.ylim(-20,10)
+plt.ylim(-20,10)
+plt.scatter(insync_rv, dr14_data['VHELIO'], c=dr14_data['VRELERR'], vmin=0, vmax=5)def plot_comparison(is_rv, ap_rv, rv_error):
+        fig, ax = plt.subplots()
+        xx = np.linspace(-20,10,50)
+        ax.scatter(is_rv, ap_rv, c=rv_error, vmin=0, vmax=5)
+        ax.plot(xx,xx, lw=1)
+        ax.set_ylim(0,10)
+        ax.set_xlim(0,10)
+        return fig, ax
+def plot_comparison(is_rv, ap_rv, rv_error):
+        fig, ax = plt.subplots()
+        xx = np.linspace(-20,10,50)
+        ax.scatter(is_rv, ap_rv, c=rv_error, vmin=0, vmax=5)
+        ax.plot(xx,xx, lw=1)
+        ax.set_ylim(0,10)
+        ax.set_xlim(0,10)
+        return fig, ax
+plot_comparison(insync_rv, dr14_data['SYNTHVHELIO'], dr14_data['SYNTHVRELERR'])
+plt.colorbar()
+def plot_comparison(is_rv, ap_rv, rv_error):
+        fig, ax = plt.subplots()
+        xx = np.linspace(-20,10,50)
+        f = ax.scatter(is_rv, ap_rv, c=rv_error, vmin=0, vmax=5)
+        plt.colorbar(f)
+        ax.plot(xx,xx, lw=1)
+        ax.set_ylim(0,10)
+        ax.set_xlim(0,10)
+        return fig, ax
+def plot_comparison(is_rv, ap_rv, rv_error):
+        fig, ax = plt.subplots()
+        xx = np.linspace(-20,10,50)
+        f = ax.scatter(is_rv, ap_rv, c=rv_error, vmin=0, vmax=5)
+        plt.colorbar(f)
+        ax.plot(xx,xx, lw=1)
+        ax.set_ylim(0,10)
+        ax.set_xlim(0,10)
+        return fig, ax
+plot_comparison(insync_rv, dr14_data['SYNTHVHELIO'], dr14_data['SYNTHVRELERR'])
+def plot_comparison(is_rv, ap_rv, rv_error):
+        fig, ax = plt.subplots()
+        xx = np.linspace(-20,10,50)
+        f = ax.scatter(is_rv, ap_rv, c=rv_error, vmin=0, vmax=2)
+        plt.colorbar(f)
+        ax.plot(xx,xx, lw=1)
+        ax.set_ylim(0,10)
+        ax.set_xlim(0,10)
+        return fig, ax
+plot_comparison(insync_rv, dr14_data['SYNTHVHELIO'], dr14_data['SYNTHVRELERR'])
+plot_comparison(insync_rv, dr14_data['VHELIO'], dr14_data['VERR'])
+dr13_file = path.join(path.expanduser('~'), 'obsdata',
+                      'dr13/apogee/spectro/redux/r6/stars/l30e/l30e.2',
+                      'allVisit-l30e.2.fits')
+# Default is dr14 file
+dr14_allVisit = apvisit_interface.prep_allVisit()
+dr13_allVisit = apvisit_interface.prep_allVisit(dr13_file)
+dr14rows = []
+dr13rows = []
+for ii, (twomassid, jd) in enumerate(zip(insync_twomassid, insync_jd)):
+        dr14cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr14_allVisit)
+        dr13cat_row = apvisit_interface.find_apogee_match(twomassid, jd, dr13_allVisit)
+        dr14rows.append(dr14cat_row)
+        dr13rows.append(dr13cat_row)
+dr14_data = pd.concat(dr14rows)
+dr13_data = pd.concat(dr13rows)
+plot_comparison(insync_rv, dr14_data['VHELIO'], dr14_data['VRELERR'])
+plot_comparison(insync_rv, dr13_data['VHELIO'], dr13_data['VRELERR'])
+dr13_data['VHELIO']
+dr13_data['VHELIO'].min()
+dr13_data['VHELIO'].max()
+dr14_data['VHELIO'].max()
+dr14_data['VHELIO'].min()
+plot_comparison(insync_rv, dr13_data['VHELIO'], dr13_data['VRELERR'])
+plot_comparison(insync_rv, dr13_data['VHELIO'], insync_df[')
+insync_df.columns
+plot_comparison(insync_rv, dr13_data['VHELIO'], insync_df['dvrad_epoch'])
+plot_comparison(insync_rv, dr13_data['SYNTHVHELIO'], insync_df['dvrad_epoch'])
+plot_comparison(insync_rv, dr13_data['VREL'], insync_df['dvrad_epoch'])
+plot_comparison(insync_rv, dr13_data['SYNTHVREL'], insync_df['dvrad_epoch'])
+plot_comparison(insync_rv, dr13_data['SYNTHVREL'], insync_df['dvrad_epoch'])
+plot_comparison(drinsync_rv, dr13_data['SYNTHVREL'], insync_df['dvrad_epoch'])
+plot_comparison(dr14_data['VHELIO'], dr13_data['VHELIO'], dr14_data['VRELERR'])
+plot_comparison(dr14_data['VHELIO'], dr13_data['VHELIO'], dr14_data['VRELERR'])
+dr14_data.to_csv?
+dr14_data.columns
+dr14_data['VISIT_ID']
+dr14_data['VISIT_ID'].to_csv('test')
+dr14_data['VISIT_ID'].values.to_csv('test')
+dr14_data['VISIT_ID'].to_csv('test')
+f, ax = plot_comparison(dr14_data['VHELIO'], dr13_data['VHELIO'], dr14_data['VRELERR'])
+ax.axes
+plt.xlim(-20,10)
+plt.ylim(-20,10)
+def plot_comparison(is_rv, ap_rv, rv_error):
+        fig, ax = plt.subplots()
+        xx = np.linspace(-20,10,50)
+        f = ax.scatter(is_rv, ap_rv, c=rv_error, vmin=0, vmax=1, s=15)
+        plt.colorbar(f)
+        ax.plot(xx,xx, lw=1)
+        ax.set_ylim(0,10)
+        ax.set_xlim(0,10)
+        return fig, ax
+if __name__ == '__main__':
+        fig, ax = plot_comparison(insync_rv, dr14_data['VHELIO'],
+                                  dr14_data['VRELERR'])
+        ax.set_xlabel('INSYNC RV [km/s]')
+        ax.set_ylabel('DR14 VHELIO [km/s]')
+        ax.set_title('DR14 Comparison, color = DR14 VRELERR')
+        fig, ax = plot_comparison(insync_rv, dr13_data['VHELIO'],
+                                  dr13_data['VRELERR'])
+        ax.set_xlabel('INSYNC RV [km/s]')
+        ax.set_ylabel('DR13 VHELIO [km/s]')
+        ax.set_title('DR13 Comparison, color = DR13 VRELERR')
+        fig, ax = plot_comparison(dr14_data['VHELIO'], dr13_data['VHELIO'],
+                                  dr14_data['VRELERR'])
+        ax.set_xlabel('DR14 VHELIO [km/s]')
+        ax.set_ylabel('DR13 VHELIO [km/s]')
+        ax.set_title('DR13 vs. DR14 Pleiades RVs, color = DR14 VRELERR')
+def plot_comparison(is_rv, ap_rv, rv_error):
+        fig, ax = plt.subplots()
+        xx = np.linspace(-20,10,50)
+        f = ax.scatter(is_rv, ap_rv, c=rv_error, vmin=0, vmax=1, s=25)
+        plt.colorbar(f)
+        ax.plot(xx,xx, lw=1)
+        ax.set_ylim(0,10)
+        ax.set_xlim(0,10)
+        return fig, ax
+if __name__ == '__main__':
+        fig, ax = plot_comparison(insync_rv, dr14_data['VHELIO'],
+                                  dr14_data['VRELERR'])
+        ax.set_xlabel('INSYNC RV [km/s]')
+        ax.set_ylabel('DR14 VHELIO [km/s]')
+        ax.set_title('DR14 Comparison, color = DR14 VRELERR')
+        fig, ax = plot_comparison(insync_rv, dr13_data['VHELIO'],
+                                  dr13_data['VRELERR'])
+        ax.set_xlabel('INSYNC RV [km/s]')
+        ax.set_ylabel('DR13 VHELIO [km/s]')
+        ax.set_title('DR13 Comparison, color = DR13 VRELERR')
+        fig, ax = plot_comparison(dr14_data['VHELIO'], dr13_data['VHELIO'],
+                                  dr14_data['VRELERR'])
+        ax.set_xlabel('DR14 VHELIO [km/s]')
+        ax.set_ylabel('DR13 VHELIO [km/s]')
+        ax.set_title('DR13 vs. DR14 Pleiades RVs, color = DR14 VRELERR')
+def plot_comparison(is_rv, ap_rv, rv_error):
+        fig, ax = plt.subplots()
+        xx = np.linspace(-20,10,50)
+        f = ax.scatter(is_rv, ap_rv, c=rv_error, vmin=0, vmax=1, s=25)
+        plt.colorbar(f)
+        ax.plot(xx,xx, lw=1)
+        ax.set_ylim(0,8)
+        ax.set_xlim(0,8)
+        return fig, ax
+if __name__ == '__main__':
+        fig, ax = plot_comparison(insync_rv, dr14_data['VHELIO'],
+                                  dr14_data['VRELERR'])
+        ax.set_xlabel('INSYNC RV [km/s]')
+        ax.set_ylabel('DR14 VHELIO [km/s]')
+        ax.set_title('DR14 Comparison, color = DR14 VRELERR')
+        fig, ax = plot_comparison(insync_rv, dr13_data['VHELIO'],
+                                  dr13_data['VRELERR'])
+        ax.set_xlabel('INSYNC RV [km/s]')
+        ax.set_ylabel('DR13 VHELIO [km/s]')
+        ax.set_title('DR13 Comparison, color = DR13 VRELERR')
+        fig, ax = plot_comparison(dr14_data['VHELIO'], dr13_data['VHELIO'],
+                                  dr14_data['VRELERR'])
+        ax.set_xlabel('DR14 VHELIO [km/s]')
+        ax.set_ylabel('DR13 VHELIO [km/s]')
+        ax.set_title('DR13 vs. DR14 Pleiades RVs, color = DR14 VRELERR')
+def plot_comparison(is_rv, ap_rv, rv_error):
+        fig, ax = plt.subplots()
+        xx = np.linspace(-20,10,50)
+        f = ax.scatter(is_rv, ap_rv, c=rv_error, vmin=0, vmax=1, s=25,
+                       alpha=0.7)
+        plt.colorbar(f)
+        ax.plot(xx,xx, lw=1)
+        ax.set_ylim(0,8)
+        ax.set_xlim(0,8)
+        return fig, ax
+if __name__ == '__main__':
+        fig, ax = plot_comparison(insync_rv, dr14_data['VHELIO'],
+                                  dr14_data['VRELERR'])
+        ax.set_xlabel('INSYNC RV [km/s]')
+        ax.set_ylabel('DR14 VHELIO [km/s]')
+        ax.set_title('DR14 Comparison, color = DR14 VRELERR')
+        fig, ax = plot_comparison(insync_rv, dr13_data['VHELIO'],
+                                  dr13_data['VRELERR'])
+        ax.set_xlabel('INSYNC RV [km/s]')
+        ax.set_ylabel('DR13 VHELIO [km/s]')
+        ax.set_title('DR13 Comparison, color = DR13 VRELERR')
+        fig, ax = plot_comparison(dr14_data['VHELIO'], dr13_data['VHELIO'],
+                                  dr14_data['VRELERR'])
+        ax.set_xlabel('DR14 VHELIO [km/s]')
+        ax.set_ylabel('DR13 VHELIO [km/s]')
+        ax.set_title('DR13 vs. DR14 Pleiades RVs, color = DR14 VRELERR')
+if __name__ == '__main__':
+        plot_dir = 'plots'
+        fig, ax = plot_comparison(insync_rv, dr14_data['VHELIO'],
+                                  dr14_data['VRELERR'])
+        ax.set_xlabel('INSYNC RV [km/s]')
+        ax.set_ylabel('DR14 VHELIO [km/s]')
+        ax.set_title('DR14 Comparison, color = DR14 VRELERR [km/s]')
+        basename = path.join(plot_dir, 'RV_insync_vs_dr14')
+        plt.savefig(basename + '.png', format='png')
+        plt.savefig(basename + '.eps', format='eps')
+fig, ax = plot_comparison(insync_rv, dr13_data['VHELIO'],
+                          dr13_data['VRELERR'])
+ax.set_xlabel('INSYNC RV [km/s]')
+ax.set_ylabel('DR13 VHELIO [km/s]')
+ax.set_title('DR13 Comparison, color = DR13 VRELERR [km/s]')
+basename = path.join(plot_dir, 'RV_insync_vs_dr13')
+plt.savefig(basename + '.png', format='png')
+plt.savefig(basename + '.eps', format='eps')
+fig, ax = plot_comparison(dr14_data['VHELIO'], dr13_data['VHELIO'],
+                          dr14_data['VRELERR'])
+ax.set_xlabel('DR14 VHELIO [km/s]')
+ax.set_ylabel('DR13 VHELIO [km/s]')
+ax.set_title('DR13 vs. DR14 Pleiades RVs, color = DR14 VRELERR [km/s]')
+basename = path.join(plot_dir, 'RV_dr14_vs_dr13')
+plt.savefig(basename + '.png', format='png')
+plt.savefig(basename + '.eps', format='eps')
+insync_df
+insync_df.columns
+insync_df['twomassid_epoch'].unique()
+insync_df['twomassid_epoch'].unique().len()
+insync_df['twomassid_epoch'].unique().len
+insync_df['twomassid_epoch'].unique().size
+dr13_data
+dr14_data
+dr14_data.columns
+dr14_data['VLSR']
+dr14_data['VGSR']
+dr14_data['VLSR']
+dr14_data.columns
+dr14_data['STARFLAGS']
+figure()
+dr14_data.columns
+plt.scatter(dr13_data['RV_LOGG'], dr14_data['RV_LOGG'])
+plt.scatter(dr13_data['RV_LOGG'], dr14_data['RV_LOGG'])
+figure()
+plt.scatter(dr13_data['RV_TEFF'], dr14_data['RV_TEFF'])
+figure()
+plt.scatter(dr13_data['VHELIO'] - dr14_data['VHELIO'], dr13_data['RV_TEFF'] -dr14_data['RV_TEFF'])
+plt.xlim(-5,5)
+figure()
+plt.scatter(dr13_data['VHELIO'] - dr14_data['VHELIO'], dr13_data['RV_LOGG'] -dr14_data['RV_LOGG'])
+plt.xlim(-5,5)
+figure()
+plt.scatter(np.abs(dr13_data['VHELIO'] - dr14_data['VHELIO']), np.abs(dr13_data['RV_LOGG'] -dr14_data['RV_LOGG']))
+plt.xlim(-5,5)
+plt.xlim(0,5)
+plt.xlim(0,6)
+figure()
+
+plt.scatter(np.abs(dr13_data['VHELIO'] - dr14_data['VHELIO']), np.abs(dr13_data['RV_FEH'] -dr14_data['RV_FEH']))
+
+plt.xlim(0,6)
+%history?
+%history -f session.tmp

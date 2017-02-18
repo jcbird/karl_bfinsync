@@ -1,0 +1,274 @@
+J/AJ/150/17       A catalog of point sources toward NGC 1333      (Rebull, 2015)
+================================================================================
+A catalog of point sources toward NGC 1333.
+    Rebull L.M.
+   <Astron. J., 150, 17 (2015)>
+   =2015AJ....150...17R
+================================================================================
+ADC_Keywords: YSOs ; Cross identifications ; Photometry, infrared ;
+              Spectral types ; Effective temperatures
+Keywords: catalogs - stars: pre-main sequence - stars: protostars
+
+Abstract:
+    I present a catalog of point-source objects toward NGC 1333, resolving
+    a wide variety of confusion about source names (and occasionally
+    positions) in the literature. I incorporate data from optical to radio
+    wavelengths, but focus most of the effort on being complete and
+    accurate from J (1.25{mu}m) to 24{mu}m. The catalog encompasses
+    52^{deg}^<R.A.<52.5{deg} and 31{deg}<decl.<31.6{deg}.
+    Cross-identifications include those from more than 25 papers and
+    catalogs from 1994 to 2014, primarily those in wide use as origins of
+    nomenclature. Gaps in our knowledge are identified, with the most
+    important being a lack of spectroscopy for spectral types or even
+    confirmation of youth and/or cluster membership. I fit a slope to the
+    spectral energy distribution (SED) between 2 and 24{mu}m for the
+    members (and candidate members) to obtain an SED classification, and I
+    compare the resulting classes to those for the same sources in the
+    literature, and for an SED fit between 2 and 8{mu}m. While there are
+    certainly differences, for the majority of the sources, there is good
+    agreement.
+
+Description:
+    I present a catalog of point-source objects toward NGC 1333. I
+    incorporated data from optical to radio wavelengths, but focused most
+    of my effort on J (1.25{mu}m) to 24{mu}m. Cross-identifications
+    include those from more than 25 papers and catalogs from 1994 to 2015
+    (see Table 1). In the process of assembling the literature catalog of
+    sources, I reconciled many ambiguities and inconsistencies in the
+    literature. All of the reconciled cross-identifications in NGC 1333
+    are included in Table2, including an indication of whether or not the
+    corresponding survey identified the object as a Young Stellar Object
+    (YSO).
+
+    All of the aggregate J-[24] single-epoch photometry appears in Table3.
+    There are nearly 7000 objects in the catalog, about 300 of which are
+    identified in the literature as YSO candidates.
+
+File Summary:
+--------------------------------------------------------------------------------
+ FileName    Lrecl    Records    Explanations
+--------------------------------------------------------------------------------
+ReadMe          80          .    This file
+table1.dat     267         24    Overview of studies and data included
+table2.dat     292       6881    Cross-identification (cross-ID) catalog
+table3.dat     209       6881    Single-epoch 1-70{mu}m catalog
+table6.dat      79         13    Comparison of classes
+--------------------------------------------------------------------------------
+
+See also:
+ IX/44  : XMM-Newton Serendipitous Source Catalogue 3XMM-DR4 (XMM-SSC, 2013)
+ II/328 : AllWISE Data Release (Cutri+ 2013)
+ II/311 : WISE All-Sky Data Release (Cutri+ 2012)
+ II/281 : 2MASS 6X Point Source Working Database / Catalog (Cutri+ 2006)
+ II/246 : 2MASS All-Sky Catalog of Point Sources (Cutri+ 2003)
+ II/332 : c2d Spitzer final data release (DR4) (Evans+, 2003)
+ J/ApJ/799/136  : IN-SYNC. II. Candidate young stars in NGC 1333 (Foster+, 2015)
+ J/A+A/568/A125 : NRC 1333 IRAS 4A H_2_O observations (Santangelo+, 2014)
+ J/A+A/563/L2   : NGC1333-IRAS2A CALYPSO IRAM-PdBI 1mm maps (Maury+, 2014)
+ J/ApJS/214/7   : CO survey of molecular clouds. IV. NGC 1333 (Bieging+, 2014)
+ J/ApJ/774/22   : CO observations of YSOs in NGC 1333 (Plunkett+, 2013)
+ J/A+A/558/A58  : NGC 1333-IRAS 4A C^18^O, NO and O_2_ spectra (Yildiz+, 2013)
+ J/ApJ/744/6    : SONYC census of low-mass objects in NGC1333 (Scholz+, 2012)
+ J/AJ/140/266   : NGC 1333 X-ray luminous YSOs properties (Winston+, 2010)
+ J/ApJS/181/321 : Properties of Spitzer c2d dark clouds (Evans+, 2009)
+ J/ApJ/674/336  : Spitzer observations of NGC 1333 (Gutermuth+, 2008)
+ J/AJ/136/1372  : Very low-mass YSOs in NGC 1333 (Oasa+, 2008)
+ J/ApJ/655/958  : 90-GHz observations in NGC 1333 (Walsh+, 2007)
+ J/A+A/468/1009 : Star formation in Perseus. II. (Hatchell+, 2007)
+ J/AJ/127/1131  : NGC 1333 low-mass stars infrared photometry (Wilking+, 2004)
+ J/A+A/401/543  : XMM-Newton observations of NGC 1333 (Preibisch, 2003)
+ J/ApJ/575/354  : Young stellar objects in the NGC 1333 (Getman+, 2002)
+ J/ApJS/125/427 : Radio sources in HH 7-11 region (Rodriguez+, 1999)
+ J/AJ/111/1964  : JHK photometry of NGC1333 (Lada+, 1996)
+ J/A+AS/106/165 : Near-IR imaging photometry of NGC 1333 (Aspin+ 1994)
+
+Byte-by-byte Description of file: table1.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units   Label     Explanations
+--------------------------------------------------------------------------------
+   1- 86  A86   ---     Source    Data set name and references
+      88  A1    ---   f_Year      [*] Indicates year obtained
+  89- 97  A9    ---     Year      Year(s) of publication
+  99-123  A25   ---     Band      Observation bands 
+ 125-267  A143  ---     Note      Notes
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: table2.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units  Label  Explanations
+--------------------------------------------------------------------------------
+   1- 18  A18   ---    Name   Catalog name (HHMMSS.ss+DDMMSS.s, J2000) (G1)
+  20- 22  I3    ---    ASR    [1/134]?=-9 Number from Aspin et al. 1994
+                               (cat. J/A+AS/106/165)
+  24- 25  I2    ---  n_ASR    [0/1]?=-9 Did ASR tag it as YSO? (1=yes, 0=no) (7)
+  27- 29  I3    ---    LAL    [7/359]?=-9 Number from Lada et al. 1996
+                               (cat. J/AJ/111/1964) (8)
+  31- 32  I2    ---  n_LAL    [1]?=-9 Did LAL tag it as YSO? (1=yes) (7)
+  34- 35  I2    ---    VLA    [1/44]?=-9 Very Large Array (VLA) number from
+                               Rodriguez et al. 1999 (cat. J/ApJS/125/427)
+  37- 38  I2    ---  n_VLA    [1]?=-9 Did Rodriguez et al. 1999 tag it as YSO?
+                               (1=yes) (7)
+  40- 41  I2    ---    P97    [3/20]?=-9 Preibish (1997A&A...324..690P) number
+  43- 58  A16   ---    2MASS  2MASS name (HHMMSSss+DDMMSSs; J2000)
+  60- 62  I3    ---    G02    [1/109]?=-9 Number from Getman et al. 2002
+                               (cat. J/ApJ/575/354)
+  64- 65  I2    ---  n_G02    [1]?=-9 Did G02 tag it as variable? (1=yes) (7)
+  67- 69  I3    ---    MBO    [1/223]?=-9 Mount Bigelow Observatory (MBO) number
+                               from Wilking et al. 2004 (cat. J/AJ/127/1131)
+  71- 86  A16   ---    c2d    Name from the Cores-to-Disks (c2d) Legacy program
+                               (Evans et al. 2003, cat. II/332)
+                               (JHHMMSS.s+DDMMSS format)
+  88- 89  I2    ---  n_c2d    [0/1]?=-9 Did c2d tag it as YSO? (1=yes, 0=no) (7)
+  91- 95  A5    ---    G07    Name from Greissl et al. (2007AJ....133.1321G)
+  97- 98  I2    ---    H07    [41/74]? Number from Hatchell et al. 2007
+                               (cat. J/A+A/468/1009)
+ 100-101  I2    ---    O08    [1/76]?=-9 Number from Oasa et al. 2008
+                               (cat. J/AJ/136/1372)
+ 103-104  I2    ---  n_O08    [0/1]?=-9 Did O08 tag it as a member?
+                               (1=yes, 0=no) (7)
+ 106-108  I3    ---    G08    [1/186]?=-9 Number from Gutermuth et al. 2008
+                               (cat. J/ApJ/674/336)
+ 110-111  I2    ---  n_G08    [1]?=-9 Did G08 tag it as a member? (1=yes) (7)
+ 113-114  I2    ---    S09    [1/28]?=-9 Number from Scholz et al.
+                               (2009ApJ...702..805S)
+ 116-118  I3    ---    W10    [1/192]?=-9 Number from Winson et al. 2010
+                               (cat. J/AJ/140/266)
+ 120-125  A6    ---    S12    Name from Scholz et al. 2012 (cat. J/ApJ/744/6)
+ 127-128  I2    ---  n_S12    [0/1]?=-9 Did S12 tag it as a member?
+                               (1=yes, 0=no) (7)
+ 130-132  I3    ---    A12    [2/137]?=-9 Number from Arnold et al.
+                               (2012ApJS..201...12A)
+ 134-135  I2    ---  n_A12    [1]?=-9 Did A12 tag it as YSO? (1=yes) (7)
+ 137-139  I3    ---    F15    [2/204]?=-9 Number in Foster et al. 2015
+                               (cat. J/ApJ/799/136)
+ 141-147  A7    ---    ---    [SSTYSV_]
+ 148-166  A19   ---    SSTYSV Name from Spitzer Space Telescope (SST) Young
+                               Stellar Object VARiability (YSOVAR) survey in
+                               NGC 1333 (Rebull et al. 2015, in preparation)
+                               (JHHMMSS.ss+DDMMSS.s format)
+ 168-169  I2    ---  n_SSTYSV [0/1]?=-9 Did Rebull et al. 2015 tag it as YSO?
+                               (1=yes, 0=no) (7)
+ 171-174  A4    ---    ---    [3XMM]
+ 175-190  A16   ---    3XMM   Identifier in the all-sky catalog from XMM
+                               (3XMM-DR4; XMM-SSC, 2013, cat. IX/44)
+ 192-292  A101  ---    OName  Any other names or cautions for this object (9)
+--------------------------------------------------------------------------------
+Note (7): Blank means that no information is available.
+Note (8): Their entire catalog was not included in the original article, but was
+     obtained via private communication from C. Lada.
+Note (9): In the end, I made changes to 37 LAL sources (see Table4 in the
+     paper). Sources that are duplicates are explicitly indicated in the last
+     column in Table 2 via notation like "=LAL44" for LAL 38.
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: table3.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units   Label   Explanations
+--------------------------------------------------------------------------------
+   1- 18  A18   ---     Name    Catalog name (HHMMSS.ss+DDMMSS.s; J2000) (G1)
+  20- 28  F9.6  deg     RAdeg   Right Ascension in decimal degrees (J2000)
+  30- 38  F9.6  deg     DEdeg   Declination in decimal degrees (J2000)
+      40  A1    ---   l_Jmag    [>] Lower limit flag on Jmag
+  41- 45  F5.2  mag     Jmag    ? J band magnitude (1.25{mu}m)
+  47- 50  F4.2  mag   e_Jmag    ? Uncertainty in Jmag
+      52  A1    ---   l_Hmag    [>] Lower limit flag on Hmag
+  53- 57  F5.2  mag     Hmag    ? H band magnitude
+  59- 62  F4.2  mag   e_Hmag    ? Uncertainty in Hmag
+      64  A1    ---   l_Kmag    [>] Lower limit flag on Kmag
+  65- 69  F5.2  mag     Kmag    ? Ks band magnitude
+  71- 74  F4.2  mag   e_Kmag    ? Uncertainty in Kmag
+      76  A1    ---   l_[3.6]   [>] Lower limit flag on [3.6]
+  77- 81  F5.2  mag     [3.6]   ? Spitzer/IRAC 3.6{mu}m band magnitude
+  83- 86  F4.2  mag   e_[3.6]   ? Uncertainty in [3.6]
+      88  A1    ---   l_[4.5]   [>] Lower limit flag on [4.5]
+  89- 93  F5.2  mag     [4.5]   ? Spitzer/IRAC 4.5{mu}m band magnitude
+  95- 98  F4.2  mag   e_[4.5]   ? Uncertainty in [4.5]
+     100  A1    ---   l_[5.8]   [>] Lower limit flag on [5.8]
+ 101-105  F5.2  mag     [5.8]   ? Spitzer/IRAC 5.8{mu}m band magnitude
+ 107-110  F4.2  mag   e_[5.8]   ? Uncertainty in [5.8]
+     112  A1    ---   l_[8.0]   [>] Lower limit flag on [8.0]
+ 113-117  F5.2  mag     [8.0]   ? Spitzer/IRAC 8.0{mu}m band magnitude
+ 119-122  F4.2  mag   e_[8.0]   ? Uncertainty in [8.0]
+     124  A1    ---   l_[24]    [>] Lower limit flag on [24]
+ 125-129  F5.2  mag     [24]    ? Spitzer/MIPS 24{mu}m band magnitude
+ 131-134  F4.2  mag   e_[24]    ? Uncertainty in [24]
+ 136-140  F5.2  mag     [70]    ? Spitzer/MIPS 70{mu}m band magnitude
+ 142-145  F4.2  mag   e_[70]    ? Uncertainty in [70]
+ 147-157  A11   ---     SpT     MK spectral type
+ 159-167  A9    ---   r_SpT     Literature origin of the spectral type (1)
+ 169-172  I4    K       Teff    ? Effective temperature from Foster et al.
+                                 2015 (cat. J/ApJ/799/136)
+ 174-178  F5.2  ---     alpha1  [-2.79/2.82]?=-9 Our Spectral Energy
+                                 Distribution (SED) slope from 2-24{mu}m (2)
+ 180-183  A4    ---     cl1     Our SED class using 2-24{mu}m slope
+                                 (I, II, III, flat, notY=not YSO candidate) (3)
+ 185-189  F5.2  ---     alpha2  [-2.88/3.22]?=-9 Our SED slope from 2-8{mu}m (2)
+ 191-194  A4    ---     cl2     Our SED class using 2-8{mu}m slope
+                                 (I, II, III, flat, notY=not YSO candidate) (3)
+ 196-201  A6    ---     cl3     SED class from Gutermuth et al. 2008
+                                 (cat. J/ApJ/674/336) (I, I*, II, or II/III) (4)
+ 203-205  A3    ---     cl4     SED class from Arnold et al.
+                                 (2012ApJS..201...12A) (I, II, FS, TD, PTD) (5)
+     207  A1    ---     cl5     SED class from Hatchell et al. 2007
+                                 (cat. J/A+A/468/1009) (0 or I) (6)
+     209  A1    ---     cl6     SED class from Sadavoy et al.
+                                 (2014ApJ...787L..18S) (0) (6)
+--------------------------------------------------------------------------------
+Note (1): Reference codes are defined as follows:
+ ASR       = Aspin et al. 1994 (cat. J/A+AS/106/165);
+ Aspin03   = Aspin (2003AJ....125.1480A);
+ Greissl07 = Greissl et al. (2007AJ....133.1321G);
+ Itoh10    = Itoh et al. (2010PASJ...62.1149I);
+ Scholz12  = Scholz et al. 2012 (cat. J/ApJ/744/6);
+ Wilking04 = Wilking et al. 2004 (cat. J/AJ/127/1131);
+ Winston10 = Winston et al. 2010 (cat. J/AJ/140/266).
+Note (2): If YSO candidate. In the spirit of Wilking et al.
+     (2001ApJ...551..357W), I define the NIR to MIR (2-24{mu}m) slope of the
+     SED, {alpha}=d(log{lambda}F_{lambda}_)/d(log{lambda}).
+Note (3): Our SED classification scheme is defined as:
+ I    = YSO candidate with {alpha}>0.3;
+ flat = YSO candidate with -0.3<{alpha}<0.3 (flat spectrum)
+ II   = YSO candidate with -1.6<{alpha}< -0.3;
+ III  = YSO candidate with {alpha}< -1.6.
+ notY = not an YSO candidate
+ Note that there are 25 objects with insufficient points in the Spectral
+ Energy Distribution (SED), such that I cannot assign a class.
+Note (4): Table6 has the numbers of objects in my catalog for which my classes
+     match (or do not match) the classes obtained from this other approach.
+Note (5): Arnold et al. (2012ApJS..201...12A) have different classes than I
+     have defined:
+ FS  = Flat-spectrum source;
+ TD  = Transition Disk class;
+ PTD = Pre-Transition Disk class.
+ Table6 has the numbers of objects in my catalog for which my classes match
+ (or do not match) the classes obtained from this other approach.
+Note (6): For the most embedded sources, there is no provision in our scheme for
+     identifying Class 0, and I do not use points at wavelengths longer than
+     24{mu}m to determine classes. I would expect, though, that those objects
+     that others have identified as Class 0 would work out to be Class I in my
+     scheme. Please refer to Section 5 in the paper for additional details.
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: table6.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units   Label     Explanations
+--------------------------------------------------------------------------------
+   1- 68  A68   ---     Class     Class definition from other approach
+  70- 71  I2    ---     I         Number of sources in our class I
+  73- 74  I2    ---     flat      Number of sources in our flat class
+  76- 77  I2    ---     II        Number of sources in our class II
+      79  I1    ---     III       Number of sources in our class III
+--------------------------------------------------------------------------------
+
+Global notes:
+Note (G1): IAU standards recommend not renaming previously identified sources,
+     but as one of the purposes of the present catalog is to sort out
+     inconsistencies and inaccuracies in existing catalogs, assigning a new,
+     coordinate-based name seems appropriate. The coordinate-based names
+     presented here (in Tables 2 and 3) should be preceded by "R15-NGC 1333."
+
+History:
+    From electronic version of the journal
+
+================================================================================
+(End)                Greg Schwarz [AAS], Sylvain Guehenneux [CDS]    24-Aug-2015
